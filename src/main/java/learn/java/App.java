@@ -46,15 +46,16 @@ public class App
         System.out.printf("CURRENT DATE - %s %n",date);
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
+        System.out.printf("Subject,Start Date, All Day Event%n");
         int i = 0;
-        while (i < 365) {
+        while (i < 1000) {
             int month = cal.get(Calendar.MONTH) +1 ;
             int day = cal.get(Calendar.DATE);
             int year = cal.get(Calendar.YEAR);
             int total = month + day + year;
             int x = findnumber(total);
             if (luckynumber.contains(x))
-            System.out.printf("%-25s [%d]%n", new SimpleDateFormat("yyyy/MM/dd EEEEE").format(cal.getTime()),x);
+            System.out.printf("Good Day [%d], %-25s,TRUE %n", x,new SimpleDateFormat("yyyy/MM/dd EEEEE").format(cal.getTime()));
             cal.add(Calendar.DATE, 1);
             i++;
         }
